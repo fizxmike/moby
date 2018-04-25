@@ -362,6 +362,7 @@ func (c *client) createLinux(id string, spec *specs.Spec, runtimeOptions interfa
 		ContainerType: "linux",
 		Owner:         defaultOwner,
 		TerminateOnLastHandleClosed: true,
+		MemoryMaximumInMB: 2048, // overrides default 1GB Utility VM Size; should be a parameter in daemon.json
 	}
 
 	if lcowConfig.ActualMode == opengcs.ModeActualVhdx {
